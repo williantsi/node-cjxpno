@@ -1,4 +1,3 @@
-const { request, response } = require("express");
 const express = require("express");
 
 var admin = require("firebase-admin");
@@ -30,29 +29,13 @@ ref.once("value", function(snapshot) {
 
 }
 
-function teste2() {
-  console.log("teste 2");
-
-  
-}
 
 app.get("/primeira-rota", (resquest, response) => {
-    return response.json({
-        message: "Acessou a primeira rota com nodemon"
-    });
+     teste();
+	
+	
+	
 });
-
-app.get("/teste2", (request, response) => {
-  teste2();
-
-  ref.update({
-    'testeNode': 'Amazing Grace Bsi 7 Eude'
-  });
-
-  return response.json({
-    message: "Acessou a primeira rota com teste2"
-});
-})
 
 app.listen(4002, () => console.log("Servidor está rodando na porta 4002")
 );
